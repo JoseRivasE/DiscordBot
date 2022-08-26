@@ -1,16 +1,19 @@
 from ast import While
 import requests
-#'MTAxMTgyNDkwODQwMzIxMjM3MA.Gv-_av.dXK96MY3H7Spn2p_V8ukvdpypUms8cFgnflZi8'
-#"MTAxMTg5NTE4NTIyNTAzMTczMQ.G9ukEV.vdgp-2AFjjrfM05KTfPqVkJKALvyiXQRnhmP7o" mokoko
-headers = {"authorization":  "MTAxMTg5NTE4NTIyNTAzMTczMQ.G9ukEV.vdgp-2AFjjrfM05KTfPqVkJKALvyiXQRnhmP7o"}
+#'MTAxMTgyNDkwODQwMzIxMjM3MA.GsCyuD.o60pr9JRP-a0JFhBmFZJD_s-LKOSqWGygdAqPM' michi
+#"MTAxMTg5NTE4NTIyNTAzMTczMQ.G3eeKN.2vizjTU_ppOCyPCBWgobL2Z36mryuUJX-yNfmQ" mokoko
+#headers = {"authorization": "MTAxMTgyNDkwODQwMzIxMjM3MA.GsCyuD.o60pr9JRP-a0JFhBmFZJD_s-LKOSqWGygdAqPM", "authorization": "MTAxMTg5NTE4NTIyNTAzMTczMQ.G3eeKN.2vizjTU_ppOCyPCBWgobL2Z36mryuUJX-yNfmQ"}
+list = [{"authorization": "MTAxMTgyNDkwODQwMzIxMjM3MA.GsCyuD.o60pr9JRP-a0JFhBmFZJD_s-LKOSqWGygdAqPM"}, 
+        {"authorization": "MTAxMTg5NTE4NTIyNTAzMTczMQ.G3eeKN.2vizjTU_ppOCyPCBWgobL2Z36mryuUJX-yNfmQ"}]
 
 file = open("text.txt", "r")
 lines = file.readlines()
 
 
 while True:
-    for line in lines:
-        requests.post(f"https://discord.com/api/v9/channels/953513830691008533/messages", headers = headers, json = {"content":line})
+    for i in list:
+        for line in lines:
+            requests.post(f"https://discord.com/api/v9/channels/861693153543061534/messages", headers = i, json = {"content":line})
         # requests.post(f"https://discord.com/api/v9/channels/953513830691008533/messages", headers = headers, json = {"content":line})
         # requests.post(f"https://discord.com/api/v9/channels/953519962973175900/messages", headers = headers, json = {"content":line})
         # requests.post(f"https://discord.com/api/v9/channels/995886225233805343/messages", headers = headers, json = {"content":line})
